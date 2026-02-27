@@ -4247,7 +4247,7 @@ requires-dist = [
     { name = "tensorboard", marker = "extra == 'notebooks'" },
     { name = "toml", marker = "extra == 'demos'" },
     { name = "torch", specifier = "<3" },
-    { name = "transformers", extras = ["torch"] },
+    { name = "transformers", extras = ["torch"], specifier = "<5.0.0" },
     { name = "urllib3", specifier = ">=1.26.19" },
 ]
 provides-extras = ["all", "notebooks", "testing", "dev", "ogv", "demos"]

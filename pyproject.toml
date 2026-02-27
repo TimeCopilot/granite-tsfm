@@ -16,7 +16,7 @@ classifiers = [
 dependencies = [
     "pandas",
     "scikit-learn",
-    "transformers[torch]",
+    "transformers[torch]<5.0.0",
     "datasets",
     "deprecated",
     "urllib3>=1.26.19", # see https://github.com/urllib3/urllib3/security/advisories/GHSA-34jh-p97f-mpxf
