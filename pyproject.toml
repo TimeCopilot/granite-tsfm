@@ -2,11 +2,9 @@
 requires = ["setuptools>=78.1.1", "wheel", "Cython", "setuptools-scm>=8.0"]
 
 [project]
-name = "granite-tsfm"
+name = "timecopilot-granite-tsfm"
 requires-python = ">=3.11,<3.14"
-# version = "0.0.1"
-dynamic = ["version"]
-authors = [{ name = "IBM" }]
+version = "0.2.0"
 description = "Public notebooks and utilities for TSFM"
 readme = "README.md"
 license = { file = "LICENSE" }
@@ -34,7 +32,7 @@ packages = ["tsfm_public", "tsfmhfdemos"]
 [project.optional-dependencies]
 
 
-all = ["granite-tsfm[notebooks,testing,dev]"]
+all = ["timecopilot-granite-tsfm[notebooks,testing,dev]"]
 
 notebooks = [
     "jupyter",
@@ -48,17 +46,17 @@ notebooks = [
 testing = [
     "pytest",
     "pytest-coverage",
-    "granite-tsfm[notebooks]",
+    "timecopilot-granite-tsfm[notebooks]",
     "parameterized",
     "pydantic>1,<3",
 ]
-dev = ["granite-tsfm[testing]", "ruff==0.5.7"]
+dev = ["timecopilot-granite-tsfm[testing]", "ruff==0.5.7"]
 
 # ogv deployments will already have jupyter
 # and we don't want to mess with RH's tested version
 ogv = ["datasets", "plotly", "kaleido"]
 demos = [
-    "granite-tsfm[notebooks]",
+    "timecopilot-granite-tsfm[notebooks]",
     "streamlit",
     "altair<5",
     "plotly",
@@ -100,5 +98,11 @@ skip-magic-trailing-comma = false
 
 # Like Black, automatically detect the appropriate line ending.
 line-ending = "auto"
+
+[dependency-groups]
+dev = [
+    "parameterized>=0.9.0",
+    "pytest>=8.4.2",
+]
 
 
