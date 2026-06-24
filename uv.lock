@@ -3614,13 +3614,12 @@ wheels = [
 
 [[package]]
 name = "timecopilot-granite-tsfm"
-version = "0.2.0"
+version = "0.2.1"
 source = { editable = "." }
 dependencies = [
     { name = "datasets" },
     { name = "deprecated" },
     { name = "einops" },
-    { name = "filelock" },
     { name = "numpy", version = "2.4.6", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.12'" },
     { name = "numpy", version = "2.5.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.12'" },
     { name = "pandas" },
@@ -3714,7 +3713,6 @@ requires-dist = [
     { name = "datasets", marker = "extra == 'ogv'" },
     { name = "deprecated" },
     { name = "einops", specifier = ">=0.7" },
-    { name = "filelock", specifier = ">=3.20.3" },
     { name = "ipywidgets", marker = "extra == 'notebooks'" },
     { name = "jupyter", marker = "extra == 'notebooks'" },
     { name = "kaleido", marker = "extra == 'demos'" },
@@ -3722,7 +3720,7 @@ requires-dist = [
     { name = "kaleido", marker = "extra == 'ogv'" },
     { name = "matplotlib", marker = "extra == 'notebooks'" },
     { name = "numpy", specifier = "<3" },
-    { name = "pandas", specifier = ">=2.3.3,<4" },
+    { name = "pandas" },
     { name = "parameterized", marker = "extra == 'testing'" },
     { name = "plotly", marker = "extra == 'demos'" },
     { name = "plotly", marker = "extra == 'notebooks'" },
@@ -3731,7 +3729,7 @@ requires-dist = [
     { name = "pytest", marker = "extra == 'testing'" },
     { name = "pytest-coverage", marker = "extra == 'testing'" },
     { name = "ruff", marker = "extra == 'dev'", specifier = "==0.5.7" },
-    { name = "scikit-learn", specifier = "<2.0.0" },
+    { name = "scikit-learn" },
     { name = "streamlit", marker = "extra == 'demos'" },
     { name = "streamlit-aggrid", marker = "extra == 'demos'" },
     { name = "tensorboard", marker = "extra == 'notebooks'" },
@@ -3740,7 +3738,7 @@ requires-dist = [
     { name = "timecopilot-granite-tsfm", extras = ["notebooks", "testing", "dev"], marker = "extra == 'all'" },
     { name = "timecopilot-granite-tsfm", extras = ["testing"], marker = "extra == 'dev'" },
     { name = "toml", marker = "extra == 'demos'" },
-    { name = "torch", specifier = ">=2.10,<2.11" },
+    { name = "torch", specifier = "<3" },
     { name = "transformers", extras = ["torch"], specifier = ">=4.57.6,<6" },
     { name = "urllib3", specifier = ">=1.26.19" },
 ]
