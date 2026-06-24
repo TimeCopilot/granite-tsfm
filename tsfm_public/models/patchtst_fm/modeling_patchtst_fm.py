@@ -64,6 +64,12 @@ class PatchTSTFMPreTrainedModel(PreTrainedModel):
     main_input_name = "inputs"
     supports_gradient_checkpointing = False
 
+    def __init__(self, config, *inputs, **kwargs):
+        super().__init__(config, *inputs, **kwargs)
+        # Initialize the all_tied_weights_keys attribute required by transformers 5.x
+        if not hasattr(self, "all_tied_weights_keys"):
+            self.all_tied_weights_keys = {}
+
 
 @dataclass
 class PatchTSTFMModelOutput(ModelOutput):
@@ -585,6 +591,7 @@ class PatchTSTFMForPrediction(PatchTSTFMPreTrainedModel):
                 torch.arange(
                     self.config.context_length - sample_len + 1,
                     self.config.context_length + 1,
+                    device=device,
                 ).float()
                 / self.config.context_length
             )
